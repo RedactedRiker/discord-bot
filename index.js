@@ -1,18 +1,24 @@
 require("dotenv").config();
+
 const { TOKEN } = process.env;
-const { Client, Collection, IntentsBitField } = require("discord.js");
+const {
+  Client,
+  Collection,
+  GatewayIntentBits,
+  Partials,
+} = require("discord.js");
 const fs = require("fs");
-const path = require("path");
 
 const client = new Client({
   intents: [
-    IntentsBitField.Flags.Guilds,
-    IntentsBitField.Flags.GuildMembers,
-    IntentsBitField.Flags.GuildModeration,
-    IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.DirectMessages,
-    IntentsBitField.Flags.MessageContent,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.MessageContent,
   ],
+  partials: [Partials.Channel],
 });
 
 client.commands = new Collection();
@@ -40,5 +46,5 @@ client.handleCommands();
 
 // Helpers
 client.reminderCmd();
-A
+
 client.login(TOKEN);

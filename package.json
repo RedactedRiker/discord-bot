@@ -1,9 +1,9 @@
 {
   "name": "Warden",
   "version": "1.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ."
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "dependencies": {
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3"
   }
 }

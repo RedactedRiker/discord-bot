@@ -1,5 +1,4 @@
-const { REST } = require("@discordjs/rest");
-const { Routes } = require("discord-api-types/v9");
+const { REST, Routes } = require("discord.js");
 const fs = require("fs");
 
 module.exports = (client) => {
@@ -13,13 +12,13 @@ module.exports = (client) => {
 
       for (const file of commandFiles) {
         const command = require(`../commands/${folder}/${file}`);
-        commands.set(command.data.name, command);
+        await commands.set(command.data.name, command);
         commandArray.push(command.data.toJSON());
       }
     }
 
     const clientId = "1271707077030580285";
-    const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
+    const rest = new REST().setToken(process.env.TOKEN);
     try {
       console.log("Refreshing slash commands.");
 
