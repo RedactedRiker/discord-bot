@@ -1,0 +1,7 @@
+{
+    "?responce1": "Responce 1 is happy.",
+    "?responce2": "Repsonce 2 is sad.",
+    "?reminder": "Hey, {userID} make to be active or else you may be removed!",
+    "?message": "Hey {userID}, this is a message from **Warden**"
+  }
+  
